@@ -6,6 +6,28 @@ Rotate aws accesskeys of all users and sending email to user
 - installed awscli
 - `AccessKeyId`, `SecretAccessKey` added in the running machine
 
+## Ploicy
+below access ploicy to be added to `rotate-key-user`
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeleteAccessKey",
+                "iam:ListUsers",
+                "iam:GetUser",
+                "iam:ListUserTags",
+                "iam:CreateAccessKey"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
 ## Steps to start process
 ```
 virtualenv -p python3 ~/env
