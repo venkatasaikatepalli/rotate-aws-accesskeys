@@ -1,7 +1,7 @@
-# Rotate-aws-keys
-to rotate all users acceskeys and sending email to user
+# Rotate-aws-accesskeys
+Rotate aws accesskeys of all users and sending email to user
 
-## Pre requirements
+## Pre-requirements
 - IAM role user with only access userdata and generate accesskey.
 - installed awscli
 - `AccessKeyId`, `SecretAccessKey` added in the running machine
@@ -13,12 +13,12 @@ source ~/env/bin/activate
 pip install -r requirements.txt
 ```
 
-## run process
+## Start server
 ```
 python app.py
 ```
 
-## security Alert
+## Security alert
 Never check in any credentials to **Github**
 
 ## Author
