@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Venkata Sai Katepalli</title>
+        <meta name="author" content="venkata Sai Katepalli">
+    </head>
+    <body>
+    {% if user %}
+        <p>Hi <b>{{ user.UserName }}</b>,</p>
+        <p>For security reasons your aws acceskeys has been updated</p>
+    {% endif %}
+    {% if user.accesskeys.old_keys %}
+        <h3><b>- Deleted Your Old Keys </b></h3>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th style="padding:4px;">AccessKeyId</th>
+            </tr>
+            {% for key in user.accesskeys.old_keys %}
+                <tr>
+                    <td style="padding:4px;">{{key.AccessKeyId}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    {% if user.accesskeys.new_keys %}
+        <h3><b>+ Generate new Keys:</b></h3>
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+                <th style="padding:4px;">Key</th>
+                <th style="padding:4px;">Value</th>
+            </tr>
+            <tr>
+                <td style="padding:4px;">AccessKeyId</td>
+                <td style="padding:4px;"><b>{{user.accesskeys.new_keys.AccessKeyId}}</b></td>
+            </tr>
+            <tr>
+                <td style="padding:4px;">SecretAccessKey</td>
+                <td style="padding:4px;"><b>{{user.accesskeys.new_keys.SecretAccessKey}}</b></td>
+            </tr>
+        </table>
+    {% endif %}
+</body>
+</html>
