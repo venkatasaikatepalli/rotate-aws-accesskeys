@@ -1,5 +1,5 @@
 import logging
-from flask import Flask
+from flask import Flask, render_template
 from scripts.iam import IAMManager
 
 __author__ = "Venkata.Sai.Kateppalli<venkatasaikatepalli@gmail.com>"
@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Welcome to Rotate aws access keys"
+    return render_template('index.html')
 
 @app.route("/rotate/")
 def rotate_keys():
