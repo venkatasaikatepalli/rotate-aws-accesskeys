@@ -40,7 +40,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## Security alert
+## <font color="red">Security alert</font>
 Never check in any credentials to **Github**
 
 ## Author
