@@ -8,11 +8,15 @@ __version__ = "1.0"
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def index():
+    return render_template('index.html')
+
+@app.route("/rotate-keys/")
+def rotate_keys():
     return render_template('index.html')
 
 @app.route("/rotate/")
-def rotate_keys():
+def rotate():
     ref = IAMManager()
     return ref.rotate_user_keys()
 
